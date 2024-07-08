@@ -1,0 +1,76 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "vite",
+            "type": "shell",
+            "command": "npm run dev",
+            "problemMatcher": []
+        },
+        {
+            "label": "vite-open",
+            "type": "shell",
+            "command": "$env:IS_OPEN=\"true\"; npm run dev",
+            "problemMatcher": []
+        },
+        {
+            "label": "laravel",
+            "type": "shell",
+            "command": "php artisan serve",
+            "problemMatcher": []
+        },
+        {
+            "label": "dev",
+            "dependsOn": [
+                "laravel",
+                "vite"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "dev-open",
+            "dependsOn": [
+                "laravel",
+                "vite-open"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "thesaurus-node",
+            "type": "shell",
+            "command": "cd ../ThesauRex/ ; npm run dev",
+            "problemMatcher": []
+        },
+        {
+            "label": "thesaurus-laravel",
+            "type": "shell",
+            "command": "cd ../ThesauRex/ ; php artisan serve --port 8001",
+            "problemMatcher": []
+        },
+        {
+            "label": "thesaurus",
+            "type": "shell",
+            "dependsOn": [
+                "thesaurus-laravel",
+                "thesaurus-node"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "dev-all",
+            "dependsOn": [
+                "thesaurus",
+                "dev"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "clear-cache",
+            "type": "shell",
+            "command": "php artisan cache:clear; cd ../ThesauRex/ ; php artisan cache:clear",
+            "problemMatcher": []
+        }
+    ]
+}
