@@ -9,7 +9,6 @@
     "javascript.format.enable": true,
     "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
     "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
-    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
     // VUE
     "vue.format.wrapAttributes": "force-expand-multiline",
     "vue.format.script.initialIndent": true,
